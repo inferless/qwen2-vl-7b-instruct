@@ -41,56 +41,128 @@ curl --location '<your_inference_url>' \
     --header 'Content-Type: application/json' \
     --header 'Authorization: Bearer <your_api_key>' \
     --data '{
-      "inputs": [
+    "inputs": [
         {
-          "name": "prompt",
-          "shape": [1],
-          "data": ["Implement a function to check if a given number is a prime number."],
-          "datatype": "BYTES"
+            "name": "prompt",
+            "shape": [
+                1
+            ],
+            "data": [
+                "What does this diagram illustrate?"
+            ],
+            "datatype": "BYTES"
         },
         {
-          "name": "system_prompt",
-          "shape": [1],
-          "data": ["You are a helpful coding bot."],
-          "datatype": "BYTES"
+            "name": "content_url",
+            "shape": [
+                1
+            ],
+            "data": [
+                "https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen-VL/assets/demo.jpeg"
+            ],
+            "datatype": "BYTES"
         },
         {
-          "name": "temperature",
-          "optional": true,
-          "shape": [1],
-          "data": [0.7],
-          "datatype": "FP32"
+            "name": "content_type",
+            "optional": true,
+            "shape": [
+                1
+            ],
+            "data": [
+                "image"
+            ],
+            "datatype": "BYTES"
         },
         {
-          "name": "top_p",
-          "optional": true,
-          "shape": [1],
-          "data": [0.1],
-          "datatype": "FP32"
+            "name": "system_prompt",
+            "optional": true,
+            "shape": [
+                1
+            ],
+            "data": [
+                "You are a helpful coding bot."
+            ],
+            "datatype": "BYTES"
         },
         {
-          "name": "repetition_penalty",
-          "optional": true,
-          "shape": [1],
-          "data": [1.18],
-          "datatype": "FP32"
+            "name": "temperature",
+            "optional": true,
+            "shape": [
+                1
+            ],
+            "data": [
+                0.7
+            ],
+            "datatype": "FP64"
         },
         {
-          "name": "max_tokens",
-          "optional": true,
-          "shape": [1],
-          "data": [512],
-          "datatype": "INT16"
+            "name": "top_p",
+            "optional": true,
+            "shape": [
+                1
+            ],
+            "data": [
+                0.1
+            ],
+            "datatype": "FP64"
         },
         {
-          "name": "top_k",
-          "optional": true,
-          "shape": [1],
-          "data": [40],
-          "datatype": "INT8"
+            "name": "repetition_penalty",
+            "optional": true,
+            "shape": [
+                1
+            ],
+            "data": [
+                1.18
+            ],
+            "datatype": "FP64"
+        },
+        {
+            "name": "max_tokens",
+            "optional": true,
+            "shape": [
+                1
+            ],
+            "data": [
+                256
+            ],
+            "datatype": "INT64"
+        },
+        {
+            "name": "max_pixels",
+            "optional": true,
+            "shape": [
+                1
+            ],
+            "data": [
+                12845056
+            ],
+            "datatype": "INT64"
+        },
+        {
+            "name": "top_k",
+            "optional": true,
+            "shape": [
+                1
+            ],
+            "data": [
+                40
+            ],
+            "datatype": "INT64"
+        },
+        {
+            "name": "max_duration",
+            "optional": true,
+            "shape": [
+                1
+            ],
+            "data": [
+                60
+            ],
+            "datatype": "INT64"
         }
-      ]
-    }'
+    ]
+}'
 ```
 
 ---
